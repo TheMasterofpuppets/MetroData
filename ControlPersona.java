@@ -42,11 +42,6 @@ public class ControlPersona{
             System.out.println("No se ha podido guardar la informacion");
         }
     }
-
-
-    
-
-
     
     /* 
     todo: metodo para modificar persona
