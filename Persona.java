@@ -87,9 +87,3 @@ public class Persona{
     }
 
 }
-
-/* 
-    ?te_amo_pendejo_de_mie_corazonzot...abstract
-    ?fgfbbdjfhfgeurfhsjkdhsjdfbsjdhdbweygfwhjcbshjcbwehhef=ataque_risa
-    ?ñajajaajjaajjajajajajajajajjajaajajajajjajajajajajaja=risa_malvada 
-*/
