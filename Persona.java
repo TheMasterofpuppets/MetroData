@@ -1,38 +1,16 @@
 
 public class Persona{
 
-    private String nombreUduario;
+    private String nombreUsuario;
     private String password;
     private long idUsuario;
     private String correo;
-    private int tipo;
 
-
-    public Persona(String pass, String nombreUsuario, String correo, int tipo){
+    public Persona(String nombreUsuario, String correo, String pass){
         this.password = pass;
-        this.nombreUduario  = nombreUsuario;
+        this.nombreUsuario  = nombreUsuario;
         this.correo = correo;
-        this.tipo = tipo;
     } 
-
-    public static boolean iniciarSeccion(String email, String password){
-        boolean entrega = false;
-        for(Persona persona:ControlPersona.personas){
-            if(persona.getCorreo().equals(email) && persona.getPassword().equals(password)){
-                entrega = true;
-                break;
-            }
-        }
-        return entrega;
-    }
-
-    public static boolean registrarse(Persona p){
-        if(iniciarSeccion(p.getCorreo(),p.getPassword())){
-            return false;
-        }
-        ControlPersona.personas.add(p);
-        return true;
-    }
 
     public long getIdUsuario() {
         return this.idUsuario;
@@ -49,12 +27,12 @@ public class Persona{
         this.correo = correo;
     }
 
-    public String getNombreUduario() {
-        return this.nombreUduario;
+    public String getNombreUsuario() {
+        return this.nombreUsuario;
     }
 
-    public void setNombreUduario(String nombreUduario) {
-        this.nombreUduario = nombreUduario;
+    public void setNombreUduario(String nombreUsuario) {
+        this.nombreUsuario = nombreUsuario;
     }
 
     public String getPassword() {
@@ -65,10 +43,8 @@ public class Persona{
         this.password = password;
     }
 
-    public int getTipo() {
-        return this.tipo;
-    }
 
+    // genera un id aleatoriamente, retorna tru si lo agrega, en caso contrario retorna flase
     public static boolean generarId(Persona p ){
         long id = (long)Math.random()*(1003565-100000+1)-100000;
         boolean entrega = true;
@@ -84,6 +60,27 @@ public class Persona{
         }
 
         return entrega;
+    }
+
+    // metodo de inicio de seccion
+    public static boolean iniciarSesion(String email, String password){
+        boolean entrega = false;
+        for(Persona persona:ControlPersona.personas){
+            if(persona.getCorreo().equals(email) && persona.getPassword().equals(password)){
+                entrega = true;
+                break;
+            }
+        }
+        return entrega;
+    }
+
+    // metodo para registrar un usuario. Guarda toda la informacion en la lista personas
+    public static boolean registrarse(Persona p){
+        if(iniciarSesion(p.getCorreo(),p.getPassword())){
+            return false;
+        }
+        ControlPersona.personas.add(p);
+        return true;
     }
 
 }
