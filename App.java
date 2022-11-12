@@ -86,7 +86,7 @@ public class App {
                                 System.out.println(menuForo);
                                 int opcionForo = ent1.nextInt();
                                 if(opcionForo==1){
-                                    Foro.mostrarInfo_foro();
+                                    System.out.println(Foro.mostrarInfo_foro());
                                 }else if(opcionForo==2){
                                     System.out.println("\nDigite la información que desea publicar\n");
                                     String publicacion = ent2.nextLine();
@@ -103,16 +103,87 @@ public class App {
                                 break;
                         }
                         System.out.println("\nDigite la opción 5 para mostrar nuevamente el menú\nOpción 0 para salir\n");
-                        ent1 = ent1.reset();
                         opcionMenuR = ent1.nextInt();
                     }
                 }else{
                     System.out.println("Error, el usuario no existe");
                 }
             }else if(conf1 == 2){
-                
+                System.out.println("\nRegistro de Usario\n______________________________________\n");
+                System.out.println("\nDigite su nombre de usuario\n");
+                String nombreUsuario = ent2.nextLine();
+                System.out.println("\nDigite su correo electronico\n");
+                String correoString = ent2.nextLine();
+                System.out.println("\nDigite la contraseña\n");
+                String contraseñaString = ent2.nextLine();
+                if(Persona.registrarse(new Pasajero(nombreUsuario, correoString, contraseñaString))){
+                    System.out.println("\nUsuario Registrado\n");
+                }else{
+                    System.out.println("El Usuario ingresado ya existe");
+                }
             }else if(conf1 == 3){
-
+                String menuUsuarioVisitante = "\n______________________________________\n" + 
+                    "1. Ver información general del metro\n"+
+                    "2. Ver afluencia\n"+
+                    "3. Mostrar menú nuevamente\n"+
+                    "4. Registrarse\n"+
+                    "0. Salir\n";
+                System.out.println(menuUsuarioVisitante);
+                int opcionVisitante = ent1.nextInt();
+                while(opcionVisitante!=0){
+                    switch (opcionVisitante) {
+                        case 1:
+                            InfoMetro.menu();
+                            break;
+                        case 2:
+                            Afluencia.cargarAfluencia();
+                            String afluencia = "\n______________________________________\n"+
+                                "\nSeleccione la opción que desea visualizar: \n"+
+                                "1. Ver toda la afluencia\n"+
+                                "2. Buscar estación para ver afluencia\n"+
+                                "3. Estaciones con alto nivel de afluencia\n";
+                                System.out.println(afluencia);
+                                int opcionAfluencia2 = ent1.nextInt();
+                                if(opcionAfluencia2 == 1){
+                                    System.out.println(Afluencia.verAfluencia());
+                                }else if(opcionAfluencia2 == 2){
+                                    System.out.println("Digita el nombra de la estacion a buscar: \n");
+                                    String estacion3 = ent2.nextLine();
+                                    System.out.println(Afluencia.buscarEstacionAfluencia(estacion3));
+                                }else if(opcionAfluencia2 == 3){
+                                    System.out.println("\nLas estaciones con mayor nivel de afluencia son: \n");
+                                    System.out.println(Afluencia.estacionesMasAfluencia("alto"));
+                                }else{
+                                    System.out.println("\nLa opción seleccionada no se encuentra en el menú\n");
+                                }
+                            Afluencia.guardarAfluencia();
+                            break;
+                        case 3:
+                            System.out.println(menuUsuarioVisitante);
+                            break;
+                        case 4:
+                            System.out.println("\nRegistro de Usario\n______________________________________\n");
+                            System.out.println("\nDigite su nombre de usuario\n");
+                            String nombreUsuario = ent2.nextLine();
+                            System.out.println("\nDigite su correo electronico\n");
+                            String correoString = ent2.nextLine();
+                            System.out.println("\nDigite la contraseña\n");
+                            String contraseñaString = ent2.nextLine();
+                            if(Persona.registrarse(new Pasajero(nombreUsuario, correoString, contraseñaString))){
+                                System.out.println("\nUsuario Registrado\n");
+                            }else{
+                                System.out.println("El Usuario ingresado ya existe");
+                            }
+                            break;
+                        case 0:
+                            break;
+                        default:
+                            System.out.println("\nLa opción seleccionada no se encuentra en el menú\n");
+                            break;
+                    }
+                    System.out.println("\nDigite la opción 3 para mostrar nuevamente el menú\nOpción 0 para salir\n");
+                    opcionVisitante = ent1.nextInt();
+                }
             }else if(conf1 == 0){
                 System.out.println("Gracias por utilizar MetroData");
             }else if(conf1 == 4){
@@ -127,4 +198,5 @@ public class App {
         ent1.close();
         ent2.close();
     }
+
 }
