@@ -1,3 +1,4 @@
+import java.util.Random;
 
 public class Persona{
 
@@ -6,11 +7,13 @@ public class Persona{
     private long idUsuario;
     private String correo;
 
+
     public Persona(String nombreUsuario, String correo, String pass){
         this.password = pass;
-        this.nombreUsuario  = nombreUsuario;
+        this.nombreUsuario = nombreUsuario;
         this.correo = correo;
-    } 
+        Persona.generarId(this);
+    }
 
     public long getIdUsuario() {
         return this.idUsuario;
@@ -45,21 +48,26 @@ public class Persona{
 
 
     // genera un id aleatoriamente, retorna tru si lo agrega, en caso contrario retorna flase
-    public static boolean generarId(Persona p ){
-        long id = (long)Math.random()*(1003565-100000+1)-100000;
+    public static void generarId(Persona p ){
+        Random generator = new Random();
+        long id = generator.nextLong(100000,1003565);
         boolean entrega = true;
-        for(Persona persona: ControlPersona.personas){
-            if(persona.getIdUsuario() == id){
-                entrega = false;
+        while(true){
+            for(Persona persona: ControlPersona.personas){
+                if(persona.getIdUsuario() == id){
+                    entrega = false;
+                    break;
+                }else{
+                    entrega = true;
+                }
+            }
+            if(entrega){
+                p.setIdUsuario(id);
                 break;
+            }else{
+                id = generator.nextLong(100000,1003565);
             }
         }
-        
-        if(entrega){
-            p.setIdUsuario(id);
-        }
-
-        return entrega;
     }
 
     // metodo de inicio de seccion

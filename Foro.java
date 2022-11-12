@@ -12,7 +12,7 @@ public class Foro{
             String line = foro.readLine();
             while(line!=null){
                 String li[] = line.split(",");
-                entrega += "\nEl usuario: "+li[0] + "\n ha publicado: " + li[1];
+                entrega += "\nEl usuario: "+li[0] + "\nha publicado: " + li[1]+"\n";
                 line = foro.readLine();
             }
             foro.close();

@@ -34,7 +34,7 @@ public class ControlPersona{
             // *toString
             
             for(Persona persona : personas){
-                String info = persona.getNombreUsuario()+","+persona.getCorreo()+","+persona.getPassword();
+                String info = persona.getNombreUsuario()+","+persona.getCorreo()+","+persona.getPassword()+","+persona.getIdUsuario();
                 base.println(info);
             }
             personas.clear();

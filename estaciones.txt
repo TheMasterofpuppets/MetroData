@@ -8,7 +8,7 @@ Universidad,
 Hospital,
 Prado,
 Parque Berrio,
-San Antonio,
+San Antonio,11:54 12/11/2022,alto
 Alpujarra,
 Exposiciones,
 Industriales,
