@@ -25,7 +25,7 @@ public class Foro{
     public static void publicar(Persona p, String info){
        try {
             PrintWriter foro = new PrintWriter(new FileWriter("informacionforo.txt", true));
-            String escritura = p.getIdUsuario() + ","+info;
+            String escritura = p.getNombreUsuario() + ","+info;
             foro.println(escritura);
             foro.close();
        } catch (Exception e) {
