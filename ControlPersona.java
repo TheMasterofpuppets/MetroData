@@ -36,7 +36,7 @@ public class ControlPersona{
                 String info = persona.getNombreUsuario()+","+persona.getCorreo()+","+persona.getPassword();
                 base.println(info);
             }
-
+            personas.clear();
             base.close();
         } catch (Exception e) {
             System.out.println("No se ha podido guardar la informacion");
