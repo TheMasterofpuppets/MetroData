@@ -298,7 +298,7 @@ public class InfoMetro{
                     }else if(estacion.equals("san javier")){
                         System.out.println(sanJavier);
                     }
-                    ent.close()
+                    ent.close();
                     break;
 
                 case 4:

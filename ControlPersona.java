@@ -6,7 +6,7 @@ import java.io.PrintWriter;
 
 public class ControlPersona{
 
-    public static ArrayList<Persona> personas = new ArrayList<Persona>();
+    public static ArrayList<Pasajero> personas = new ArrayList<Pasajero>();
 
     
 
@@ -41,12 +41,6 @@ public class ControlPersona{
         } catch (Exception e) {
             System.out.println("No se ha podido guardar la informacion");
         }
-    }
-    
-    /* 
-    todo: metodo para modificar persona
-    */ 
-      
+    }    
 
-    
 }

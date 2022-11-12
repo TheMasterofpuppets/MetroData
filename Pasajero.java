@@ -4,10 +4,11 @@ public class Pasajero extends Persona{
         super(nombreUsuario, email, pass);
     }
 
-
-    /*
-      todo // Construir Mostrar afluencia
-      todo // Reportar afluencia
-     */
-
-}
+    public static Pasajero buscarPersona(String Email){
+        Pasajero p1 = null;
+        for(Pasajero persona: ControlPersona.personas){
+            if(persona.getCorreo().equals(Email)){return persona;}
+        }
+        return p1;
+    }
+} 

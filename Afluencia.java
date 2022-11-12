@@ -67,13 +67,12 @@ public class Afluencia {
         return entrega;
     }
     
-
     public static String verAfluencia(){
         String entrega = "";
         for(String s: afluencias){
             String s1[] = s.split(":");
             if(s1.length>1){
-                entrega += "\nLa estacion: " + s1[0] + "\nCon hora: " + s1[1]+"\nTenia un nivel de afluencia: "+ s1[2]+"\n";
+                entrega += "\nLa estacion: " + s1[0] + "\nCon hora y día: " + s1[1]+"\nTenia un nivel de afluencia: "+ s1[2]+"\n";
             }else{
                 entrega += "\nLa estacion: " + s1[0] + "\nNo cuenta con informacion de afluencia";
             }
@@ -81,7 +80,6 @@ public class Afluencia {
         return entrega;
     }
     
-
     public static void reportarAfluencia(String estacion, String tipo){
         DateTimeFormatter dft = DateTimeFormatter.ofPattern("h:mm");
         String hora = LocalDateTime.now().format(dft);
@@ -97,6 +95,4 @@ public class Afluencia {
             }
         }
     }
-
-
 }

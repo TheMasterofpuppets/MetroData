@@ -75,7 +75,7 @@ public class Persona{
     }
 
     // metodo para registrar un usuario. Guarda toda la informacion en la lista personas
-    public static boolean registrarse(Persona p){
+    public static boolean registrarse(Pasajero p){
         if(iniciarSesion(p.getCorreo(),p.getPassword())){
             return false;
         }

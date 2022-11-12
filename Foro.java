@@ -21,7 +21,6 @@ public class Foro{
         return entrega;
     }
 
-
     public static void publicar(Persona p, String info){
        try {
             PrintWriter foro = new PrintWriter(new FileWriter("informacionforo.txt", true));
@@ -32,5 +31,4 @@ public class Foro{
             System.out.println("Error al escribir en el foro");
        } 
     }
-
 }
