@@ -18,6 +18,7 @@ public class Afluencia {
             String linea = aflue.readLine();
             while(linea!=null){
                 afluencias.add(linea);
+                linea = aflue.readLine();
             }
             aflue.close();
         } catch (Exception e) {
@@ -41,7 +42,7 @@ public class Afluencia {
     public static String estacionesMasAfluencia(String tipoAfluencia){
         String entrega = "";
         for(String s: afluencias){
-            String s1[] = s.split(":");
+            String s1[] = s.split(",");
             if(s1.length>1){
                 if(s1[2].equals(tipoAfluencia)){
                     entrega += "\nLa estacion: " + s1[0] + "\nCon hora: " + s1[1]+"\nTenia un nivel de afluencia: "+ s1[2]+"\n";
@@ -54,7 +55,7 @@ public class Afluencia {
     public static String buscarEstacionAfluencia(String nombreEstacion){
         String entrega = "";
         for(String s: afluencias){
-            String s1[] = s.split(":");
+            String s1[] = s.split(",");
             if(s1[0].equals(nombreEstacion)){
                 if(s1.length>1){
                     entrega += "\nLa estacion: " + s1[0] + "\nCon hora y día: " + s1[1]+"\nTenia un nivel de afluencia: "+ s1[2]+"\n";
@@ -70,11 +71,11 @@ public class Afluencia {
     public static String verAfluencia(){
         String entrega = "";
         for(String s: afluencias){
-            String s1[] = s.split(":");
+            String s1[] = s.split(",");
             if(s1.length>1){
                 entrega += "\nLa estacion: " + s1[0] + "\nCon hora y día: " + s1[1]+"\nTenia un nivel de afluencia: "+ s1[2]+"\n";
             }else{
-                entrega += "\nLa estacion: " + s1[0] + "\nNo cuenta con informacion de afluencia";
+                entrega += "\nLa estacion: " + s1[0] + "\nNo cuenta con informacion de afluencia\n";
             }
         }
         return entrega;
@@ -86,11 +87,11 @@ public class Afluencia {
         dft = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         String fecha = LocalDate.now().format(dft);
         String fechaHora = hora + " " + fecha;
-        String salida = estacion+":"+fechaHora+":"+tipo;
-        for(String s: afluencias){
-            String s1[] = s.split(":");
+        String salida = estacion+","+fechaHora+","+tipo;
+        for(int i = 0; i<afluencias.size();i++){
+            String s1[] = afluencias.get(i).split(",");
             if(s1[0].equals(estacion)){
-                s = salida;
+                afluencias.set(i,salida);
                 break;
             }
         }

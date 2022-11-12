@@ -1,21 +1,21 @@
-Niquia:
-Bello:
-Madera:
-Acebedo:
-Tricentenario:
-Caribe:
-Universidad:
-Hospital:
-Prado:
-Parque Berrio:
-San Antonio:
-Alpujarra:
-Exposiciones:
-Industriales:
-Poblado:
-Aguacatala:
-Ayurá:
-Envigado:
-Itagüí:
-Sabaneta:
-La Estrella:
+Niquia,2:24 12/11/2022,medio
+Bello,
+Madera,
+Acebedo,
+Tricentenario,
+Caribe,
+Universidad,
+Hospital,
+Prado,
+Parque Berrio,
+San Antonio,
+Alpujarra,
+Exposiciones,
+Industriales,
+Poblado,
+Aguacatala,
+Ayurá,
+Envigado,2:36 12/11/2022,alto
+Itagüí,
+Sabaneta,
+La Estrella,

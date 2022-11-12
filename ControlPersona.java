@@ -17,7 +17,8 @@ public class ControlPersona{
             String linea = base.readLine();
             while(linea!=null){
                 String datos[] = linea.split(",");
-                personas.add(new Pasajero(datos[0], datos[1], datos[2]));
+                personas.add(new Pasajero(datos[0],datos[1],datos[2]));
+                linea = base.readLine();
             }
             base.close();
         } catch (Exception e) {
@@ -26,7 +27,7 @@ public class ControlPersona{
     }
     
     // *Metodo para guardar usuarios
-    public static void gardarEnBase(){
+    public static void guardarEnBase(){
         try {
             PrintWriter base = new PrintWriter(new FileWriter("UsuarioRegistrados.csv"));
             

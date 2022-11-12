@@ -15,13 +15,13 @@ public class InfoMetro{
         "2. Líneas del sistema metro y sus estaciones\n"+
         "3. Rutas integradas de las cuencuas 3 y 6\n"+
         "4. Horas picos del sistema metro\n"+
-        "5. ¿Cuántas personas moviliza el sistema metro?\n";
+        "5. ¿Cuántas personas moviliza el sistema metro?\n"+
+        "0. Salir\n";
 
         System.out.println(menuPrincipal);
-
-        Scanner entrada = new Scanner(System.in);
-        int num = entrada.nextInt();
-        
+        Scanner ent= new Scanner(System.in); // int
+        Scanner ent2 = new Scanner(System.in); // String
+        int num = ent.nextInt();
         while(num!=0){
             
             switch(num){
@@ -119,7 +119,7 @@ public class InfoMetro{
                     "\n****************************************************************\n"
                     ;
                     System.out.println(lineasMetro);
-                        break;
+                    break;
 
                 case 3:
                     System.out.println("\n*********************************************\n");
@@ -239,9 +239,8 @@ public class InfoMetro{
                     String cisneros = "\nESTACIÓN CISNEROS: \n"+
                     "Hasta el momento esta estaciÓn no presenta rutas integradas\n";
 
-                    Scanner ent = new Scanner(System.in);
                     System.out.println(infoEstaciones);
-                    String estacion = ent.nextLine();
+                    String estacion = ent2.nextLine();
 
                     if(estacion.equals("niquia")){
                         System.out.println(niquia);
@@ -298,9 +297,7 @@ public class InfoMetro{
                     }else if(estacion.equals("san javier")){
                         System.out.println(sanJavier);
                     }
-                    ent.close();
                     break;
-
                 case 4:
                     String horasPico = 
 
@@ -315,7 +312,7 @@ public class InfoMetro{
                     System.out.println(horasPico);
                         break;
 
-                    case 5:
+                case 5:
                     String numUsuarios = 
                     "\n***************************************\n"+
                     "\nCIFRAS DE USUARIOS MOVILIZADOS POR EL SISTEMA METRO\n"+
@@ -330,15 +327,18 @@ public class InfoMetro{
                     "\n***************************************\n"
                     ;
                     System.out.println(numUsuarios);
-                        break;
-                    default:
-                        System.out.println("\nERROR: Selección inválida...\n");
                     break;
+                
+                case 0:
+                    break;
+                default:
+                    System.out.println("\nERROR: Selección inválida...\n");
+                break;
                 }
+                
             System.out.println("\nDigite nuevamente el número de la información que desea visualizar: \n");
-            num = entrada.nextInt();
+            num = ent.nextInt();
         }
-    
-        entrada.close();
+
     }
 }
