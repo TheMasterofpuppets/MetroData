@@ -7,7 +7,7 @@ public class App {
     public static void menuPrincipal(){
         String bienvenida = "\n______________________________________\n"+
             "\nBienvenid@ a MetroData\n"+
-            "La aplicaición que le brinda información del Metro de Medellín\n"+
+            "La aplicación que le brinda información del Metro de Medellín\n"+
             "\n1. Iniciar sesión\n" +
             "2. Registrarse\n" +
             "3. Continuar como invitado\n"+
@@ -30,7 +30,7 @@ public class App {
                     System.out.println("\nBienvenido " + pasajero.getNombreUsuario()+"\n");
                     String menuUsuarioRegistrado = "\n______________________________________\n" + 
                     "1. Ver información general del metro\n"+
-                    "2. Reporta afluencia\n"+
+                    "2. Reportar afluencia\n"+
                     "3. Ver afluencia\n"+
                     "4. Acceder al foro\n"+
                     "5. Mostrar menú nuevamente\n"+
@@ -81,14 +81,14 @@ public class App {
                                 break;
                             case 4:
                                 String menuForo = "\n______________________________________\n" +
-                                "1. Mostroas publicaciones\n"+
+                                "1. Mostrar publicaciones\n"+
                                 "2. Publicar un comentario\n";
                                 System.out.println(menuForo);
                                 int opcionForo = ent1.nextInt();
                                 if(opcionForo==1){
                                     System.out.println(Foro.mostrarInfo_foro());
                                 }else if(opcionForo==2){
-                                    System.out.println("\nDigite la información que desea publicar\n");
+                                    System.out.println("\nDigite el comentario que desea publicar\n");
                                     String publicacion = ent2.nextLine();
                                     Foro.publicar(pasajero, publicacion);
                                 }else{
@@ -109,10 +109,10 @@ public class App {
                     System.out.println("Error, el usuario no existe");
                 }
             }else if(conf1 == 2){
-                System.out.println("\nRegistro de Usario\n______________________________________\n");
-                System.out.println("\nDigite su nombre de usuario\n");
+                System.out.println("\nRegistro de usuario\n______________________________________\n");
+                System.out.println("\nDigite el nombre de usuario\n");
                 String nombreUsuario = ent2.nextLine();
-                System.out.println("\nDigite su correo electronico\n");
+                System.out.println("\nDigite el correo electronico\n");
                 String correoString = ent2.nextLine();
                 System.out.println("\nDigite la contraseña\n");
                 String contraseñaString = ent2.nextLine();

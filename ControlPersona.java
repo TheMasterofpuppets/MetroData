@@ -17,7 +17,7 @@ public class ControlPersona{
             String linea = base.readLine();
             while(linea!=null){
                 String datos[] = linea.split(",");
-                personas.add(new Pasajero(datos[0],datos[1],datos[2]));
+                personas.add(new Pasajero(datos[0],datos[1],datos[2],Long.parseLong(datos[3])));
                 linea = base.readLine();
             }
             base.close();

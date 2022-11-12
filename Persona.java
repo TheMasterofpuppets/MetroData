@@ -7,6 +7,12 @@ public class Persona{
     private long idUsuario;
     private String correo;
 
+    public Persona(String nombreUsuario, String correo, String pass, long idUsuario){
+        this.password = pass;
+        this.nombreUsuario = nombreUsuario;
+        this.correo = correo;
+        this.idUsuario = idUsuario;
+    }
 
     public Persona(String nombreUsuario, String correo, String pass){
         this.password = pass;
