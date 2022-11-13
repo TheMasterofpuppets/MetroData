@@ -1,4 +1,4 @@
-Niquia,
+Niquia,4:45 12/11/2022,medio
 Bello,
 Madera,
 Acebedo,
@@ -12,10 +12,10 @@ San Antonio,
 Alpujarra,
 Exposiciones,
 Industriales,
-Poblado,
-Aguacatala,
+Poblado,4:30 12/11/2022,alto
+Aguacatala,4:41 12/11/2022,alto
 Ayurá,
-Envigado,
+Envigado,4:46 12/11/2022,bajo
 Itagüí,
 Sabaneta,
 La Estrella,
